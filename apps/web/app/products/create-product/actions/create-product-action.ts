@@ -1,3 +1,7 @@
+"use server";
+
+import { revalidateTag } from "next/cache";
+
 export const submitCreatProductAction = async (
   prevData: { name: string; price: string },
   formData: FormData
@@ -15,6 +19,8 @@ export const submitCreatProductAction = async (
       const error = await result.json();
       throw new Error(error.message || "Failed to create product");
     }
+
+    revalidateTag("products");
 
     return {
       name: formData.get("name") as string,
