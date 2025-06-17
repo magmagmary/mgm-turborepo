@@ -1,5 +1,5 @@
-import CreateProduct from "./products/create-product/create-product";
-import ProductsList from "./products/products-list/products-list";
+import CreateProduct from "../features/products/create-product/create-product";
+import ProductsList from "../features/products/products-list/products-list";
 
 export default function Home() {
   return (
